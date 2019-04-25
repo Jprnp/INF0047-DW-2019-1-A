@@ -1,0 +1,40 @@
+.conteudo {
+    width: 40%;
+    margin: auto;
+}
+
+.mylabel {
+    margin: auto;
+    font-size: 14px;
+}
+
+.checklabel {
+    font-size: 14px;
+}
+
+.numPequeno {
+    width: 80px;
+    margin: auto;
+}
+
+.botaoCentralizado {
+    margin: 10px;
+    text-align: center;
+}
+
+.selecao {
+    align-content: start;
+    text-align: start;
+    margin: auto;
+}
+
+.result {
+    align-content: start;
+    text-align: start;
+    margin: auto;
+}
+
+.result-right {
+    margin: 0;
+    align-self: end;
+}
