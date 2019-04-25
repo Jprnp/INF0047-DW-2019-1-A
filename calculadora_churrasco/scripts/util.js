@@ -9,8 +9,22 @@ var kgPorCarne;
 var qtdCarnes;
 
 function printQtd() {
-    qtdAdultos = document.getElementById("qtdAdultos").value;
-    qtdCriancas = document.getElementById("qtdCriancas").value;
+    let elemAdultos = document.getElementById("qtdAdultos");
+    let elemCriancas = document.getElementById("qtdCriancas")
+
+    qtdAdultos = elemAdultos.value;
+    qtdCriancas = elemCriancas.value;
+
+    if (qtdAdultos < 0) {
+        qtdAdultos = 0;
+        elemAdultos.value = 0;
+    }
+
+    if (qtdCriancas < 0) {
+        qtdCriancas = 0;
+        elemCriancas.value = 0.
+    }
+
     qtdTotal = qtdAdultos * G_AD_CARNE + qtdCriancas * G_CR_CARNE;
 
     let opcoes = document.getElementsByClassName("form-check-input");
@@ -28,7 +42,7 @@ function printQtd() {
 
     for (check of opcoes) {
         if (check.checked === true) {
-            html = html + `<tr>\n<td>${procuraLabel(check.id)}</td>\n<td>${kgPorCarne}</td></tr>`;
+            html = html + `<tr>\n<td>${procuraLabel(check.id)}</td>\n<td>${kgPorCarne}</td>\n</tr>\n`;
         }
     }
     corpoTabela.innerHTML = html;
