@@ -1,0 +1,45 @@
+.conteudo {
+    width: 50%;
+    margin: auto;
+}
+
+.mylabel {
+    margin: auto;
+    font-size: 14px;
+}
+
+.results {
+    text-align: left;
+    margin: auto;
+    width: 100%;
+}
+
+.centralizado {
+    margin: auto;
+    align-content: center;
+}
+
+.divisaoLabel {
+    width: 15%;
+    margin: auto;
+}
+
+.divisaoResult {
+    width: 85%;
+    margin: auto;
+}
+
+.resultValue {
+    margin-left: 10px !important;
+    width: 25%;
+}
+
+.numPequeno {
+    width: 80px;
+    margin: auto;
+}
+
+.botaoCentralizado {
+    margin: 10px;
+    text-align: center;
+}

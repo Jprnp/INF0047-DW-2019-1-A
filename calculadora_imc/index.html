@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<div class="conteudo">
+    <h1 align="center">Cálculo de IMC</h1>
+    <br>
+    <div class="align-content-center">
+        <form>
+            <div class="form-group centralizado">
+                <div class="d-flex flex-row">
+                    <label class="mylabel" for="altura">Altura</label>
+                    <input type="number" class="form-control numPequeno" id="altura">
+                    <label class="mylabel" for="peso">Peso</label>
+                    <input type="number" class="form-control numPequeno" id="peso">
+                </div>
+            </div>
+
+            <div class="botaoCentralizado">
+                <button type="button" class="btn btn-primary" onclick="printQtd()">Calcular</button>
+            </div>
+        </form>
+
+        <div aria-hidden="true" hidden="true" class="alert alert-danger" role="alert" id="alerta">
+            Inserir valores maiores que 0!
+            <button type="button" class="close" onclick="hideAlerta()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <br>
+        <h5>Resultado</h5>
+
+        <div class="form-group centralizado">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-row results">
+                    <div class="divisaoLabel">
+                        <label class="mylabel" for="imc">IMC</label>
+                    </div>
+                    <div class="divisaoResult">
+                        <input type="number" class="form-control numPequeno resultValue" id="imc" readonly>
+                    </div>
+                </div>
+                <div class="d-flex flex-row results">
+                    <div class="divisaoLabel">
+                        <label class="mylabel" for="categoria">Resultado</label>
+                    </div>
+                    <div class="divisaoResult">
+                        <input type="text" class="form-control resultValue" id="categoria" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="centralizado">
+            <h5>Tabela de Resultados</h5>
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">IMC</th>
+                        <th scope="col">Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Menos do que 18,5</td>
+                        <td>Abaixo do peso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 18,5 e 24,9</td>
+                        <td>Peso normal</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 25 e 29,9</td>
+                        <td>Sobrepeso</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 30 e 34,9</td>
+                        <td>Obesidade grau 1</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 35 e 39,9</td>
+                        <td>Obesidade grau 2</td>
+                    </tr>
+                    <tr>
+                        <td>Mais do que 40</td>
+                        <td>Obesidade grau 3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script src="scripts/util.js"></script>
+</body>
+</html>
