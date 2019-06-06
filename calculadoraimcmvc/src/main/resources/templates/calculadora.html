@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de IMC</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<main role="main">
+    <div class="conteudo">
+        <h1 align="center">Cálculo de IMC</h1>
+        <br>
+        <div class="align-content-center">
+            <form action="/calcular">
+                <div class="form-group centralizado">
+                    <div class="d-flex flex-row">
+                        <label class="mylabel" for="altura">Altura (m)</label>
+                        <input type="number" step="any" class="form-control numPequeno" id="altura" th:name="altura">
+                        <label class="mylabel" for="peso">Peso (Kg)</label>
+                        <input type="number" step="any" class="form-control numPequeno" id="peso" th:name="peso">
+                    </div>
+                </div>
+
+                <div class="botaoCentralizado">
+                    <button type="submit" class="btn btn-primary">Calcular</button>
+                </div>
+            </form>
+
+            <br>
+            <h5>Resultado</h5>
+
+            <div class="form-group centralizado">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-row results">
+                        <div class="divisaoLabel">
+                            <label class="mylabel" for="imc">IMC</label>
+                        </div>
+                        <div class="divisaoResult">
+                            <input type="number" class="form-control numPequeno resultValue" id="imc" th:value="${imc}"
+                                   readonly>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row results">
+                        <div class="divisaoLabel">
+                            <label class="mylabel" for="categoria">Resultado</label>
+                        </div>
+                        <div class="divisaoResult">
+                            <input type="text" class="form-control resultValue" id="categoria" th:value="${resultado}"
+                                   readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <div class="centralizado">
+                <h5>Tabela de Resultados</h5>
+
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">IMC</th>
+                        <th scope="col">Resultado</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="result: ${tabelaResult}">
+                        <tr>
+                            <td th:text="${result.getCondicao()}"></td>
+                            <td th:text="${result.getValor()}"></td>
+                        </tr>
+                    </th:block>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>
